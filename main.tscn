@@ -1,0 +1,38 @@
+[gd_scene load_steps=6 format=3 uid="uid://d06kivov3grwt"]
+
+[ext_resource type="Texture2D" uid="uid://c6k82kp5mrnr" path="res://icon.svg" id="1_ibjcx"]
+[ext_resource type="PackedScene" uid="uid://dptscl4vfhvyl" path="res://player.tscn" id="2_vyybt"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_u8o1s"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_bfqpc"]
+texture = ExtResource("1_ibjcx")
+texture_region_size = Vector2i(125, 125)
+0:0/next_alternative_id = 2
+0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-62.5, -62.5, 62.5, -62.5, 62.5, 62.5, -62.5, 62.5)
+0:0/1 = 1
+0:0/1/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/1/physics_layer_0/angular_velocity = 0.0
+0:0/1/physics_layer_0/polygon_0/points = PackedVector2Array(-62.5, -62.5, 62.5, -62.5, 62.5, 62.5, -62.5, 62.5)
+0:0/1/physics_layer_0/polygon_0/one_way = true
+
+[sub_resource type="TileSet" id="TileSet_ym1xh"]
+tile_size = Vector2i(125, 125)
+physics_layer_0/collision_layer = 1
+physics_layer_0/physics_material = SubResource("PhysicsMaterial_u8o1s")
+sources/2 = SubResource("TileSetAtlasSource_bfqpc")
+
+[node name="main" type="Node2D"]
+
+[node name="Node2D" parent="." instance=ExtResource("2_vyybt")]
+position = Vector2(378, 138)
+
+[node name="TileMap" type="TileMap" parent="."]
+position = Vector2(555, 419)
+tile_set = SubResource("TileSet_ym1xh")
+collision_visibility_mode = 1
+format = 2
+layer_0/tile_data = PackedInt32Array(65531, 2, 0, 65532, 2, 0, 65533, 2, 0, 65534, 2, 0, 65535, 2, 0, 65536, 2, 0, 65537, 2, 0, 65538, 2, 0, 65539, 2, 0)

@@ -1,7 +1,23 @@
-[gd_scene format=3 uid="uid://dptscl4vfhvyl"]
+[gd_scene load_steps=4 format=3 uid="uid://dptscl4vfhvyl"]
+
+[ext_resource type="Script" path="res://monke.gd" id="1_yrwgw"]
+[ext_resource type="Texture2D" uid="uid://c6k82kp5mrnr" path="res://icon.svg" id="2_1d85y"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_h0ebs"]
+size = Vector2(129, 125)
 
 [node name="Node2D" type="Node2D"]
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+script = ExtResource("1_yrwgw")
+
+[node name="Icon" type="Sprite2D" parent="CharacterBody2D"]
+position = Vector2(122, 115)
+texture = ExtResource("2_1d85y")
+
+[node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
+position = Vector2(124, 122)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+position = Vector2(122.5, 115.5)
+shape = SubResource("RectangleShape2D_h0ebs")
